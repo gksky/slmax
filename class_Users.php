@@ -39,9 +39,9 @@ class Users
       $this->gender = $row['gender'];
       $this->birthCity = $row['birthcity'];
     } elseif (isset($firstName) 
-              && preg_match('/^[a-zа-яё]{1}[a-zа-яё]*[\-\s]{1}[a-zа-яё]*[a-zа-яё]{1}$/i', $firstName) 
+              && preg_match('/^[a-zа-яё]{1}[a-zа-яё]*[\-\s]{0,1}[a-zа-яё]*[a-zа-яё]{1}$/i', $firstName) 
               && isset($lastName) 
-              && preg_match('/^[a-zа-яё]{1}[a-zа-яё]*[\-\s]{1}[a-zа-яё]*[a-zа-яё]{1}$/i', $lastName) 
+              && preg_match('/^[a-zа-яё]{1}[a-zа-яё]*[\-\s]{0,1}[a-zа-яё]*[a-zа-яё]{1}$/i', $lastName) 
               && isset($birthDate) 
               && preg_match('/^[0-9]{4}\-[0-1]{1}[0-9]{1}\-[0-3]{1}[0-9]{1}$/', $birthDate) 
               && strtotime($birthDate) && isset($gender) && is_numeric($gender) 
